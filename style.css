@@ -1,0 +1,48 @@
+* {
+    outline: 1px solid red;
+}
+
+body {
+    background-color: #0D1117;
+    color: #E2F6FC;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#one {
+    order: 1;
+    flex-grow: 1;
+}
+
+#two {
+    order: 2;
+    flex-grow: 1;
+}
+
+#three {
+    order: 3;
+    flex-grow: 1;
+}
+
+#four {
+    order: 4;
+    flex-grow: 1;
+}
+/* for box of calculator #161B22 */
