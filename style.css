@@ -1,48 +1,94 @@
+:root {
+    --body: #010409;
+    --test-border: #ff0000;
+    --border: #21262D;
+    --calculator: #0D1117;
+    --result-screen: #ffcfb8;
+    --result-font: #2B2B2C;
+    --btn: #ffcfb8;
+    --btn-font: #2B2B2C;
+}
+
 * {
-    outline: 1px solid red;
+    outline: 1px solid var(--test-border);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    background-color: #0D1117;
-    color: #E2F6FC;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 20%;
-    margin-bottom: 20%;
+    background-color: var(--body);
+    color: var(--font);
+    margin-top: 10%;
+    margin-bottom: 10%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#calculator {
-    margin-left: 30%;
-    margin-right: 30%;
+/* MAIN */
+
+.calculator {
     width: 350px;
-    height: 500px;
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    padding: 20px;
+    background-color: var(--calculator);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
 }
 
-#one {
-    order: 1;
-    flex-grow: 1;
+.calculator-screen,
+.buttons-top,
+.buttons-bottom {
+    display: flex;
 }
 
-#two {
-    order: 2;
-    flex-grow: 1;
+/* RESULTS DISPLAY */
+.calculator-screen {
+    /* width: 100%; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: var(--result-screen);
+    color: var(--result-font);
 }
 
-#three {
-    order: 3;
-    flex-grow: 1;
+#result-display {
+
 }
 
-#four {
-    order: 4;
-    flex-grow: 1;
+#working-display {
+
 }
-/* for box of calculator #161B22 */
+
+/* TOP BUTTONS GRID */
+.buttons-top {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+#clear-btn,
+#backspace-btn {
+    width: 50%;
+    background-color: var(--btn);
+}
+
+/* BOTTOM BUTTONS GRID */
+.buttons-bottom {
+    width: 100%;
+    flex-direction: column;
+}
+
+.row {
+    width: 100%
+}
+
+.btn {
+    width: 20%;
+    height: 40px;
+    background-color: var(--btn);
+}
+
