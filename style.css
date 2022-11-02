@@ -1,19 +1,24 @@
 :root {
-    --body: #010409;
+    --body: #ffffff;
     --test-border: #ff0000;
     --border: #21262D;
-    --calculator: #0D1117;
+    --calculator: #d3d3d3;
     --result-screen: #ffcfb8;
     --result-font: #2B2B2C;
-    --btn: #ffcfb8;
+    --btn: #ece5e2;
     --btn-font: #2B2B2C;
+    --clear-btn: #ff7676;
+    --backspace-btn: #7678ff;
+    --btn-height: 70px;
+    --btn-font-size: 24px;
 }
 
 * {
-    outline: 1px solid var(--test-border);
+    /* outline: 1px solid var(--test-border); */
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -29,7 +34,7 @@ body {
 /* MAIN */
 
 .calculator {
-    width: 350px;
+    width: 400px;
     border: 2px solid var(--border);
     border-radius: 15px;
     padding: 20px;
@@ -46,49 +51,68 @@ body {
 
 /* RESULTS DISPLAY */
 .calculator-screen {
-    /* width: 100%; */
+    width: 100%;
+    border: 2px solid var(--border);
+    border-radius: 5px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-end;
     background-color: var(--result-screen);
     color: var(--result-font);
+    height: 100px;
 }
 
 #result-display {
-
+    font-size: 16px;
 }
 
 #working-display {
-
+    font-size: 16px;
+    font-weight: 600;
 }
 
 /* TOP BUTTONS GRID */
 .buttons-top {
     width: 100%;
+    padding: 10px 0px;
+    gap: 10px;
     flex-direction: row;
     justify-content: space-evenly;
-
 }
 
 #clear-btn,
 #backspace-btn {
+    border: 2px solid var(--border);
+    border-radius: 5px;
     width: 50%;
-    background-color: var(--btn);
+    height: var(--btn-height);
+    font-size: var(--btn-font-size);
+}
+
+#clear-btn {
+    background-color: var(--clear-btn);
+}
+
+#backspace-btn {
+    background-color: var(--backspace-btn);
+
 }
 
 /* BOTTOM BUTTONS GRID */
 .buttons-bottom {
     width: 100%;
-    flex-direction: column;
-}
-
-.row {
-    width: 100%
+    padding: 10px 0px;
+    gap: 10px;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
 }
 
 .btn {
-    width: 20%;
-    height: 40px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
     background-color: var(--btn);
+    flex: 1 0 20%;
+    height: var(--btn-height);
+    font-size: var(--btn-font-size);
 }
 
