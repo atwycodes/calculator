@@ -55,11 +55,12 @@ body {
     border: 2px solid var(--border);
     border-radius: 5px;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-end;
     background-color: var(--result-screen);
     color: var(--result-font);
     height: 100px;
+    padding: 10px 10px;
 }
 
 #result-display {

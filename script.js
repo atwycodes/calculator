@@ -1,65 +1,79 @@
-// assigning events one by one
+let firstInput = ""
+let secondInput = ""
+
+console.log(firstInput);
 const resultDisplay = document.querySelector("#result-display");
 const workingDisplay = document.querySelector("#working-display");
 const clearButton = document.querySelector("#clear-btn");
 const backSpaceButton = document.querySelector("#backspace-btn");
 
-// EVENT DELEGATION PATTERN
+// EVENT DELEGATION
 const keys = document.querySelector(".buttons-bottom");
 
-// assigning event handle to parent element
-let numbersRegex = /[0-9\.]/g // matches numbers 0-9 and .
-let operatorsRegex = //g
-let string = " +++ --x ==x -+- 12312 444 This is a test string...123456 9870"
-let replaceString = string.replace(operatorsRegex, "[");
+// CHANGING CALCULATOR DISPLAY  
+let numbersRegex = /[0-9\.]/
+let periodRegex = /\./
+let operatorsRegex = /[\+÷\-x]/
 
 keys.addEventListener("click", (event) => {
-  if(event.target.tagName.toLowerCase() === 'button') {
-    console.log(event.target.innerHTML);
+  let input = event.target;
+  if (periodRegex.test(workingDisplay.textContent) === true && input.innerHTML === "." ) { // if display already has a decimal
+    return; 
+
+  } else if (input.nodeName.toLowerCase() === 'button' && numbersRegex.test(input.innerHTML) === true) { // if key is a number
+    workingDisplay.textContent += input.innerHTML;
+
+  } else if (input.nodeName.toLowerCase() === 'button' && operatorsRegex.test(input.innerHTML) === true) { // if key is an operator 
+    let firstInput = workingDisplay.textContent;
+    let currentMode = input.innerHTML;
+    console.log(firstInput);
+    console.log(currentMode);
+    clearScreen()
+    resultDisplay.textContent = `${firstInput} ` + `${currentMode}`
   }
 });
 
+// DISPLAY FUNCTIONS
+function clearScreen() {
+  workingDisplay.textContent = ""
+  // resultDisplay.textContent = ""
+}
 
+// OPERATOR FUNCTIONS
+function operate (input) {
+  let firstInput = workingDisplay.textContent;
+  let currentMode = input.innerHTML;
+}
 
-// DEFINING OPERATION FUNCTIONS
-
-function operate (a,b,mode) {
-  if (mode === "add") {
-    return add(a,b);
-
-  } else if (mode === "subtract") {
-    return subtract(a,b);
-
-  } else if (mode === "multiply") {
-    return multiply(a,b);
-
-  } else if (mode === "divide") {
-    return divide(a,b);
+function calculate (firstInput,secondInput,currentMode) {
+  switch(currentMode) {
+    case "+":
+      return add(firstInput,secondInput);
+    case "-":
+      return subtract(firstInput,secondInput);
+    case "x":
+      return multiply(firstInput,secondInput);
+    case "÷":
+      return divide(firstInput,secondInput);
   }
-
 }
 
-function add (...arguments) {
-  console.log(arguments);
-  let total = arguments.reduce((a,b) => a + b);
+function add (firstInput,secondInput) {
+  let total = parseFloat(firstInput) + parseFloat(secondInput);
   return total;
 }
 
-function subtract (...arguments) {
-  console.log(arguments);
-  let total = arguments.reduce((a,b) => a - b);
+function subtract (firstInput,secondInput) {
+  let total = parseFloat(firstInput) - parseFloat(secondInput);
   return total;
 }
 
-function multiply (...arguments) {
-  console.log(arguments);
-  let total = arguments.reduce((a,b) => a * b);
+function multiply (firstInput,secondInput) {
+  let total = parseFloat(firstInput) * parseFloat(secondInput);
   return total;
 }
 
-function divide (...arguments) {
-  console.log(arguments);
-  let total = arguments.reduce((a,b) => a / b);
+function divide (firstInput,secondInput) {
+  let total = parseFloat(firstInput) / parseFloat(secondInput);
   return total;
 }
-
