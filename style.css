@@ -1,5 +1,7 @@
+/* #ffffff */
+
 :root {
-    --body: #ffffff;
+    --body: #000000;
     --test-border: #ff0000;
     --border: #21262D;
     --calculator: #d3d3d3;
@@ -108,7 +110,7 @@ body {
     flex-wrap: wrap;
 }
 
-.btn {
+button {
     border: 2px solid var(--border);
     border-radius: 5px;
     background-color: var(--btn);
