@@ -1,6 +1,6 @@
 # Calculator Project
 
-A [calculator]() capstone project to practice the fundamentals of JavaScript.
+A [calculator](https://atwycodes.github.io/calculator/) capstone project to practice the fundamentals of JavaScript.
 
 Concepts explored & practiced include:
 * Manipulation of DOM Elements using JavaScript
